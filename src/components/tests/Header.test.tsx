@@ -1,6 +1,6 @@
-import { describe, it, expect, vi } from 'vitest';
-import { Header } from '../Header';
-import { render, screen } from '../../__tests__/test-utils';
+import {describe, expect, it} from 'vitest';
+import {Header} from '../Header';
+import {render, screen} from '../../__tests__/test-utils';
 
 const mockProduct = {
   id: 1,

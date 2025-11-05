@@ -1,17 +1,9 @@
-import React, { useState } from 'react';
-import {
-  Card,
-  Image,
-  Text,
-  Group,
-  Button,
-  NumberInput,
-  Stack,
-} from '@mantine/core';
-import { IconMinus, IconPlus, IconShoppingCart } from '@tabler/icons-react';
-import { Product } from '../types';
-import { useAppDispatch } from '../hooks/redux';
-import { addToCart } from '../store/slices/cartSlice';
+import React, {useState} from 'react';
+import {Button, Card, Group, Image, NumberInput, Stack, Text,} from '@mantine/core';
+import {IconMinus, IconPlus, IconShoppingCart} from '@tabler/icons-react';
+import {Product} from '../types';
+import {useAppDispatch} from '../hooks/redux';
+import {addToCart} from '../store/slices/cartSlice';
 
 interface ProductCardProps {
   product: Product;
@@ -63,9 +55,9 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         />
       </Card.Section>
 
-      <Stack spacing="md" mt="md">
+      <Stack gap="md" mt="md">
         <Group justify="space-between" align="center">
-          <Group align="center" spacing="xs">
+          <Group align="center" gap="xs">
             <Text fw={600} size="lg">
               {name}
             </Text>
@@ -77,7 +69,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             )}
           </Group>
 
-          <Group spacing="xs">
+          <Group gap="xs">
             <Button
               variant="light"
               size="xs"

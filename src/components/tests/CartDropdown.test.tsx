@@ -1,6 +1,6 @@
-import { describe, it, expect } from 'vitest';
-import { CartDropdown } from '../CartDropdown';
-import { render, screen } from '../../__tests__/test-utils';
+import {describe, expect, it, vi} from 'vitest';
+import {CartDropdown} from '../CartDropdown';
+import {render, screen} from '../../__tests__/test-utils';
 
 
 vi.mock('../../../hooks/redux', () => ({

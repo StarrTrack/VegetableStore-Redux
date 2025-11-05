@@ -1,14 +1,9 @@
 import React from 'react';
-import { Text, Group, Button, Stack, Image, Divider } from '@mantine/core';
-import {
-  IconMinus,
-  IconPlus,
-  IconMoodSad,
-  IconTrash,
-} from '@tabler/icons-react';
-import { CartItem } from '../types';
-import { useAppDispatch } from '../hooks/redux';
-import { updateQuantity, removeFromCart } from '../store/slices/cartSlice';
+import {Button, Divider, Group, Image, Stack, Text} from '@mantine/core';
+import {IconMinus, IconMoodSad, IconPlus, IconTrash,} from '@tabler/icons-react';
+import {CartItem} from '../types';
+import {useAppDispatch} from '../hooks/redux';
+import {removeFromCart, updateQuantity} from '../store/slices/cartSlice';
 
 interface CartDropdownProps {
   cart: CartItem[];
@@ -27,11 +22,11 @@ export const CartDropdown: React.FC<CartDropdownProps> = ({ cart, total }) => {
   };
 
   return (
-    <Stack spacing="md" style={{ maxWidth: '100%', minWidth: 300 }}>
+    <Stack gap="md" style={{ maxWidth: '100%', minWidth: 300 }}>
       {cart.length === 0 ? (
-        <Stack align="center" spacing="xs">
+        <Stack align="center" gap="xs">
           <IconMoodSad size={60} color="gray" />
-          <Text align="center">Your cart is empty!</Text>
+          <Text ta="center">Your cart is empty!</Text>
         </Stack>
       ) : (
         <>
@@ -40,7 +35,7 @@ export const CartDropdown: React.FC<CartDropdownProps> = ({ cart, total }) => {
 
             return (
               <React.Fragment key={item.product.id}>
-                <Group spacing="sm" noWrap>
+                <Group gap="sm">
                   <Image
                     style={{ flex: 1 }}
                     src={item.product.image}
@@ -50,7 +45,7 @@ export const CartDropdown: React.FC<CartDropdownProps> = ({ cart, total }) => {
                     radius="sm"
                   />
 
-                  <Stack spacing="xs" style={{ flex: 4 }}>
+                  <Stack gap="xs" style={{ flex: 4 }}>
                     <Text size="sm" fw={600}>
                       {name}{' '}
                       <Text component="span" size="sm" color="dimmed">
@@ -63,7 +58,7 @@ export const CartDropdown: React.FC<CartDropdownProps> = ({ cart, total }) => {
                     </Text>
                   </Stack>
 
-                  <Group spacing={4} align="center">
+                  <Group gap={4} align="center">
                     <Button
                       variant="subtle"
                       size="xs"
